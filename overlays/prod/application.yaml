@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/mluukkai/k25_project
+    repoURL: https://github.com/mluukkai/k25_project_conf
     path: overlays/prod
     targetRevision: HEAD
   destination:
