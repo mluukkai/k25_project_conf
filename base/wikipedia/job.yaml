@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: project-wikipedia
+spec:
+  schedule: "5 */4 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: wikipedia
+            image: WIKIPEDIA
+            env:
+            - name: TODO_BACKEND_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: project-conf
+                  key: TODO_BACKEND_URL
+            resources:
+              requests:
+                memory: "50Mi"
+                cpu: "20m"
+              limits:
+                memory: "100Mi"
+                cpu: "50m"
+          restartPolicy: Never

@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-todo-backend-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-todo-backend
+  template:
+    metadata:
+      labels:
+        app: project-todo-backend
+    spec:   
+      containers: 
+      - name: todo-backend
+        image: TODO-BACKEND
+        env:
+        - name: PORT
+          value: "3001"
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: project-conf
+              key: DB_URL
+        - name: NATS_URI
+          valueFrom:
+            configMapKeyRef:
+              name: project-conf
+              key: NATS_URI      
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "20m"
+          limits:
+            memory: "100Mi"
+            cpu: "50m"
+        # readinessProbe:
+        #   initialDelaySeconds: 10
+        #   periodSeconds: 5
+        #   httpGet:
+        #       path: /healthz
+        #       port: 3001
+        # livenessProbe:
+        #     initialDelaySeconds: 20
+        #     periodSeconds: 5
+        #     httpGet:
+        #        path: /healthz
+        #        port: 3001

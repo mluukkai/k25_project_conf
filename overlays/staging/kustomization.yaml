@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ./../../base
+
+patches:
+- path: app/deployment.yaml
+
+namespace: project-staging
+images:
+- name: BACKUP
+  newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-backup
+  newTag: main-d5b38d9509e8b63f8f5a50e57c5f755d25acc4a7
+- name: TODO-APP
+  newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-app
+  newTag: main-d5b38d9509e8b63f8f5a50e57c5f755d25acc4a7
+- name: TODO-BACKEND
+  newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-backend
+  newTag: main-d5b38d9509e8b63f8f5a50e57c5f755d25acc4a7
+- name: TODO-BROADCASTER
+  newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-broadcaster
+  newTag: main-d5b38d9509e8b63f8f5a50e57c5f755d25acc4a7
+- name: WIKIPEDIA
+  newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-wikipedia
+  newTag: main-d5b38d9509e8b63f8f5a50e57c5f755d25acc4a7
