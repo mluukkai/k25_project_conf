@@ -11,16 +11,16 @@ namespace: project-staging
 images:
 - name: BACKUP
   newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-backup
-  newTag: main-4223007ccca9b6f613531fb6d88cc43fa7113f52
+  newTag: main-14a3d07896f589f53fa43ca2a75580df5b1dd241
 - name: TODO-APP
   newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-app
-  newTag: main-4223007ccca9b6f613531fb6d88cc43fa7113f52
+  newTag: main-14a3d07896f589f53fa43ca2a75580df5b1dd241
 - name: TODO-BACKEND
   newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-backend
-  newTag: main-4223007ccca9b6f613531fb6d88cc43fa7113f52
+  newTag: main-14a3d07896f589f53fa43ca2a75580df5b1dd241
 - name: TODO-BROADCASTER
   newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-broadcaster
-  newTag: main-4223007ccca9b6f613531fb6d88cc43fa7113f52
+  newTag: main-14a3d07896f589f53fa43ca2a75580df5b1dd241
 - name: WIKIPEDIA
   newName: europe-north1-docker.pkg.dev/dwk-gke-455410/my-repository/project-todo-wikipedia
-  newTag: main-4223007ccca9b6f613531fb6d88cc43fa7113f52
+  newTag: main-14a3d07896f589f53fa43ca2a75580df5b1dd241
